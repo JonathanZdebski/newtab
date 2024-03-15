@@ -1,0 +1,184 @@
+/* page.module.css */
+
+/* Estilos existentes */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+ }
+ 
+ .searchForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+ }
+ 
+ .searchBar {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+ }
+ 
+ .searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px; /* Aumenta o border-radius para tornar o campo de entrada mais arredondado */
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição suave para o border-color e box-shadow */
+ }
+ 
+ .searchInput:focus {
+  border-color: #808080; /* Muda a cor da borda para cinza quando o campo de entrada está em foco */
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5); /* Adiciona um efeito de sombra cinza suave */
+  outline: none; /* Remove o contorno padrão do navegador */
+ }
+ 
+ .searchButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  background-color: #000000; /* Muda a cor de fundo para preto */
+  color: #ffffff; /* Muda a cor do texto para branco */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5); /* Adiciona um efeito de sombra cinza suave */
+ }
+ 
+ 
+ .searchButton:hover {
+  background-color: #ffffff4d;
+  color: #000000;
+  transition: 0.4s;
+ }
+ 
+/* page.module.css */
+
+/* Estilos existentes */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+ }
+ 
+ .searchForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+ }
+ 
+ .searchBar {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+ }
+ 
+ .searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ .searchInput:focus {
+  border-color: #808080;
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+  outline: none;
+ }
+ 
+ .searchButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 25px;
+  border: none;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+ }
+ 
+ .searchButton:hover {
+  background-color: #ffffff4d;
+  color: #000000;
+  transition: 0.4s;
+ }
+ 
+ /* Adicionando círculos brancos em volta dos ícones */
+ .iconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 80px 0;
+ }
+ 
+ .icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px solid white; /* Adiciona um círculo branco em volta do ícone */
+  border-radius: 50%; /* Torna o círculo branco perfeitamente circular */
+  padding: 2px; /* Adiciona um pouco de espaço entre o ícone e o círculo branco */
+ }
+ 
+ .icon:hover {
+  transform: scale(1.8);
+ }
+ 
+ .editIcon {
+  width: 30px; /* Define a largura do ícone */
+  height: 30px; /* Define a altura do ícone */
+  cursor: pointer; /* Muda o cursor para um ponteiro quando o mouse passa sobre o ícone */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição suave para as transformações */
+  fill: white; /* Define a cor de preenchimento do ícone para branco */
+  background-color: transparent; /* Define o fundo do ícone como transparente */
+  border-radius: 50%; /* Arredonda os cantos do ícone */
+  padding: 5px; /* Adiciona um pouco de espaço ao redor do ícone para garantir que o arredondamento seja visível */
+  display: inline-block; /* Garante que o padding seja aplicado corretamente */
+  margin-right: 10px; /* Adiciona um espaço à direita do ícone */
+ }
+ 
+ .editIcon:hover {
+  transform: scale(1.5); /* Aumenta o tamanho do ícone em 20% quando o mouse passa sobre ele */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao ícone */
+ }
+ 
+/* page.module.css */
+
+/* page.module.css */
+
+.roundedInput {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
+ }
+ 
+ .roundedInput:focus {
+  border-color: #007bff; /* Muda a cor da borda para azul quando o input está focado */
+  transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
+ }
+ 

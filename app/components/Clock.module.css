@@ -1,0 +1,7 @@
+.clockContainer {
+    position: absolute;
+    top: 30px; /* Ajuste conforme necessário */
+    right: 30px; /* Ajuste conforme necessário */
+    font-size: 5em; /* Ajuste o tamanho do texto conforme necessário */
+    color: #000; /* Ajuste a cor do texto conforme necessário */
+   }
