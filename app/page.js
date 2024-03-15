@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Cookies from "js-cookie"; // Importa js-cookie
 import styles from "./page.module.css";
 import Clock from "../app/components/Clock";
 import DateDisplay from "./components/DateDisplay";
@@ -28,14 +27,27 @@ const Home = () => {
   const [showIcon5Input, setShowIcon5Input] = useState(true);
   const [showIcon6Input, setShowIcon6Input] = useState(true);
 
+  // Carregar os links e o estado de visibilidade do localStorage quando a página é carregada
   useEffect(() => {
-    // Carregar os links dos cookies
-    const storedIcon1Url = Cookies.get("icon1Url");
-    const storedIcon2Url = Cookies.get("icon2Url");
-    const storedIcon3Url = Cookies.get("icon3Url");
-    const storedIcon4Url = Cookies.get("icon4Url");
-    const storedIcon5Url = Cookies.get("icon5Url");
-    const storedIcon6Url = Cookies.get("icon6Url");
+    const storedIcon1Url = localStorage.getItem("icon1Url");
+    const storedIcon2Url = localStorage.getItem("icon2Url");
+    const storedIcon3Url = localStorage.getItem("icon3Url");
+    const storedIcon4Url = localStorage.getItem("icon4Url");
+    const storedIcon5Url = localStorage.getItem("icon5Url");
+    const storedIcon6Url = localStorage.getItem("icon6Url");
+
+    const showIcon1Input =
+      localStorage.getItem("showIcon1Input") === "false" ? false : true;
+    const showIcon2Input =
+      localStorage.getItem("showIcon2Input") === "false" ? false : true;
+    const showIcon3Input =
+      localStorage.getItem("showIcon3Input") === "false" ? false : true;
+    const showIcon4Input =
+      localStorage.getItem("showIcon4Input") === "false" ? false : true;
+    const showIcon5Input =
+      localStorage.getItem("showIcon5Input") === "false" ? false : true;
+    const showIcon6Input =
+      localStorage.getItem("showIcon6Input") === "false" ? false : true;
 
     if (storedIcon1Url) setIcon1Url(storedIcon1Url);
     if (storedIcon2Url) setIcon2Url(storedIcon2Url);
@@ -43,6 +55,13 @@ const Home = () => {
     if (storedIcon4Url) setIcon4Url(storedIcon4Url);
     if (storedIcon5Url) setIcon5Url(storedIcon5Url);
     if (storedIcon6Url) setIcon6Url(storedIcon6Url);
+
+    setShowIcon1Input(showIcon1Input);
+    setShowIcon2Input(showIcon2Input);
+    setShowIcon3Input(showIcon3Input);
+    setShowIcon4Input(showIcon4Input);
+    setShowIcon5Input(showIcon5Input);
+    setShowIcon6Input(showIcon6Input);
   }, []);
 
   const handleSearchChange = (event) => {
@@ -56,28 +75,31 @@ const Home = () => {
     )}`;
     window.open(searchUrl, "_blank");
     setSearchTerm("");
-
-    // Salvar os links como cookies
-    Cookies.set("icon1Url", icon1Url);
-    Cookies.set("icon2Url", icon2Url);
-    Cookies.set("icon3Url", icon3Url);
-    Cookies.set("icon4Url", icon4Url);
-    Cookies.set("icon5Url", icon5Url);
-    Cookies.set("icon6Url", icon6Url);
   };
 
   const handleIconUrlChange = (setIconUrl, event) => {
     setIconUrl(event.target.value);
   };
 
-  const handleKeyPress = (event, setShowInput) => {
+  const handleKeyPress = (event, setShowInput, inputName) => {
     if (event.key === "Enter") {
       setShowInput(false);
+      // Salvar o estado de visibilidade no localStorage
+      // Salvar os links no localStorage
+      localStorage.setItem("icon1Url", icon1Url);
+      localStorage.setItem("icon2Url", icon2Url);
+      localStorage.setItem("icon3Url", icon3Url);
+      localStorage.setItem("icon4Url", icon4Url);
+      localStorage.setItem("icon5Url", icon5Url);
+      localStorage.setItem("icon6Url", icon6Url);
+      localStorage.setItem(inputName, "false");
     }
   };
 
-  const reopenInput = (setShowInput) => {
+  const reopenInput = (setShowInput, inputName) => {
     setShowInput(true);
+    // Atualizar o estado de visibilidade no localStorage
+    localStorage.setItem(inputName, "true");
   };
 
   return (
@@ -104,6 +126,7 @@ const Home = () => {
             setUrl: setIcon1Url,
             showInput: showIcon1Input,
             setShowInput: setShowIcon1Input,
+            inputName: "showIcon1Input",
           },
           {
             icon: Icon2,
@@ -111,6 +134,7 @@ const Home = () => {
             setUrl: setIcon2Url,
             showInput: showIcon2Input,
             setShowInput: setShowIcon2Input,
+            inputName: "showIcon2Input",
           },
           {
             icon: Icon3,
@@ -118,6 +142,7 @@ const Home = () => {
             setUrl: setIcon3Url,
             showInput: showIcon3Input,
             setShowInput: setShowIcon3Input,
+            inputName: "showIcon3Input",
           },
           {
             icon: Icon4,
@@ -125,6 +150,7 @@ const Home = () => {
             setUrl: setIcon4Url,
             showInput: showIcon4Input,
             setShowInput: setShowIcon4Input,
+            inputName: "showIcon4Input",
           },
           {
             icon: Icon5,
@@ -132,6 +158,7 @@ const Home = () => {
             setUrl: setIcon5Url,
             showInput: showIcon5Input,
             setShowInput: setShowIcon5Input,
+            inputName: "showIcon5Input",
           },
           {
             icon: Icon6,
@@ -139,6 +166,7 @@ const Home = () => {
             setUrl: setIcon6Url,
             showInput: showIcon6Input,
             setShowInput: setShowIcon6Input,
+            inputName: "showIcon6Input",
           },
         ].map((iconData, index) => (
           <div
@@ -157,14 +185,20 @@ const Home = () => {
                   handleIconUrlChange(iconData.setUrl, event)
                 }
                 onKeyPress={(event) =>
-                  handleKeyPress(event, iconData.setShowInput)
+                  handleKeyPress(
+                    event,
+                    iconData.setShowInput,
+                    iconData.inputName
+                  )
                 }
                 className={`${styles.iconInput} ${styles.roundedInput}`}
               />
             )}
             {!iconData.showInput && (
               <EditIcon
-                onClick={() => reopenInput(iconData.setShowInput)}
+                onClick={() =>
+                  reopenInput(iconData.setShowInput, iconData.inputName)
+                }
                 className={styles.editIcon}
               />
             )}
