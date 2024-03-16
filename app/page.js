@@ -12,6 +12,7 @@ import Icon5 from "../app/icons/icon5.svg";
 import Icon6 from "../app/icons/icon6.svg";
 import EditIcon from "../app/icons/EditIcon.svg"; // Importa o ícone SVG de edição
 import MeteoblueWidget from "./components/MeteoblueWidget";
+import SpotifyEmbed from "./components/SpotifyEmbed";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -218,6 +219,7 @@ const Home = () => {
       <Clock />
       <DateDisplay />
       <MeteoblueWidget />
+      <SpotifyEmbed />
     </div>
   );
 };
