@@ -19,8 +19,14 @@
 }
 
 
-
 .dayOfWeek {
     display: flex;
     justify-content: flex-end;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .dateDisplayContainer {
+        display: none; /* Remove o relógio da tela em telas menores */
+    }
 }

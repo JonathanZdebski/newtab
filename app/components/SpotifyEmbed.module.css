@@ -15,9 +15,22 @@
     border: 0;
 }
 
-/* Estilos para telas menores */
 @media (max-width: 768px) {
     .embedContainer {
-        height: 200px; /* Altura reduzida para telas menores */
+        top: auto;
+        left: 1.8rem; /* Alinha o contêiner à esquerda da tela */
+        right: auto; /* Alinha o contêiner à direita da tela */
+        width: 60%; /* Ocupa toda a largura da tela */
+        height: auto; /* Ajusta a altura automaticamente para se adequar ao conteúdo */
+        display: flex; /* Usa flexbox para centralizar o conteúdo */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        padding: 10px 0; /* Adiciona um pouco de padding para melhorar a aparência */
+    }
+
+    .embedIframe {
+        width: 100%; /* Ocupa toda a largura do contêiner */
+        height: auto; /* Ajusta a altura automaticamente para se adequar ao conteúdo */
+        border: 0; /* Remove a borda */
     }
 }

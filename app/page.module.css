@@ -170,3 +170,58 @@
   transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
  }
  
+ /* Estilos para telas menores */
+ @media (max-width: 768px) {
+   .container {
+       padding: 20px; /* Adiciona um pouco de padding para melhorar a legibilidade em telas menores */
+       display: flex; /* Usa flexbox para centralizar o conteúdo */
+       flex-direction: column; /* Define a direção do flex para coluna */
+       justify-content: center; /* Centraliza verticalmente */
+       align-items: center; /* Centraliza horizontalmente */
+       height: 100vh; /* Define a altura do contêiner para 100% da altura da viewport */
+   }
+   
+   .searchForm {
+       width: 100%; /* Garante que o formulário de pesquisa ocupe toda a largura disponível */
+   }
+   
+   .searchBar {
+    max-width: 85%; /* Ajusta a largura máxima para 100% para melhorar a responsividade */
+    margin-left: -40px; /* Move o elemento 10px para a esquerda */
+}
+
+   
+   .buttonContainer {
+       flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
+       gap: 10px; /* Reduz o espaçamento entre os botões */
+   }
+   
+   .searchButton {
+       margin-top: 20px; /* Aumenta o espaçamento entre os botões */
+       padding: 10px 15px; /* Reduz o padding dos botões */
+       font-size: 16px; /* Reduz o tamanho da fonte dos botões */
+   }
+   
+   .iconContainer {
+       gap: 20px; /* Reduz o espaçamento entre os ícones */
+       padding: 40px 0; /* Ajusta o padding para melhorar a responsividade */
+   }
+   
+   .icon {
+       width: 30px; /* Reduz o tamanho dos ícones */
+       height: 30px; /* Reduz o tamanho dos ícones */
+   }
+   
+   .editIcon {
+       width: 20px; /* Reduz o tamanho dos ícones */
+       height: 20px; /* Reduz o tamanho dos ícones */
+       margin-right: 5px; /* Reduz o espaçamento à direita dos ícones */
+   }
+   .icon6 {
+      display: none; /* Remove o ícone da tela em telas menores */
+  }
+  .icon5 {
+   display: none; /* Remove o ícone da tela em telas menores */
+}
+  }
+  

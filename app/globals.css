@@ -1,23 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background-image: url('https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+ margin: 0;
+ padding: 0;
+ background-image: url('https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ overflow: hidden;
+ overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+ overflow-y: hidden; /* Esconde a barra de rolagem vertical */
+}
+
+/* page.module.css ou arquivo CSS global */
+.clock-container {
+ transition: all 0.5s ease;
+}
+
+/* styles/fonts.css */
+@font-face {
+ font-family: 'MyFont';
+ src: url('/path/to/MyFont.ttf') format('truetype');
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+ html, body {
+    font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
  }
 
- /* page.module.css ou arquivo CSS global */
-.clock-container {
-  transition: all 0.5s ease;
+ .clock-container {
+    /* Ajustes específicos para telas menores, se necessário */
  }
- 
- /* styles/fonts.css */
-@font-face {
-  font-family: 'MyFont';
-  src: url('/path/to/MyFont.ttf') format('truetype');
- }
- 
+ /* Estilos para telas menores */
+@media (max-width: 768px) {
+   .footer {
+       background-color: transparent; /* Remove o fundo branco */
+   }
+}
+
+}
