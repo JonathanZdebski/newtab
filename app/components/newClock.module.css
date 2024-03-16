@@ -1,0 +1,15 @@
+.clockContainer {
+    position: fixed; /* Mantém o relógio fixo na tela, mesmo ao rolar */
+    top: 25%; /* Posiciona o topo do relógio no meio da altura da janela */
+    left: 51%; /* Posiciona a esquerda do relógio no meio da largura da janela */
+    transform: translate(-50%, -50%); /* Ajusta a posição para garantir que o centro do relógio esteja no centro da tela */
+    width: 300px; /* Ajuste o valor conforme necessário */
+    height: 400px; /* Ajuste o valor conforme necessário */
+    z-index: 1000; /* Garante que o relógio esteja acima de outros elementos */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do contêiner */
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
+}
+
