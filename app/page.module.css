@@ -179,6 +179,7 @@
        justify-content: center; /* Centraliza verticalmente */
        align-items: center; /* Centraliza horizontalmente */
        height: 100vh; /* Define a altura do contêiner para 100% da altura da viewport */
+
    }
    
    .searchForm {
@@ -194,13 +195,15 @@
    .buttonContainer {
        flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
        gap: 10px; /* Reduz o espaçamento entre os botões */
+       margin-left: 10px;
+       
    }
    
    .searchButton {
        margin-top: 20px; /* Aumenta o espaçamento entre os botões */
-       padding: 10px 15px; /* Reduz o padding dos botões */
+       padding: 10px 10px; /* Reduz o padding dos botões */
        font-size: 16px; /* Reduz o tamanho da fonte dos botões */
-       margin-left: 1rem;
+       margin-left: 0.8rem;
    }
    
    .iconContainer {
