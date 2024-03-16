@@ -17,7 +17,7 @@
 
 @media (max-width: 768px) {
     .embedContainer {
-        top: 40rem;
+        top: 37rem;
         left: 1.3rem; /* Alinha o contêiner à esquerda da tela */
         right: auto; /* Alinha o contêiner à direita da tela */
         width: 60%; /* Ocupa toda a largura da tela */

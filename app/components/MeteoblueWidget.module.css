@@ -20,7 +20,7 @@
 /* Estilos para telas menores */
 @media (max-width: 768px) {
     .widgetContainer {
-       top: 10px; /* Ajusta a posição superior para telas menores */
+       top: 36rem; /* Ajusta a posição superior para telas menores */
        left: 10px; /* Ajusta a posição à esquerda para telas menores */
        width: 95%; /* Reduz o tamanho do contêiner para 90% da largura da tela */
        height: 10rem; /* Ajusta a altura automaticamente para se adequar ao conteúdo */

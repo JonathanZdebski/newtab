@@ -18,9 +18,8 @@
     .clockContainer {
        width: 200px; /* Reduz o tamanho do relógio para telas menores */
        height: 300px; /* Reduz o tamanho do relógio para telas menores */
-       top: 28%; /* Ajusta a posição superior para telas menores */
+       top: 20%; /* Ajusta a posição superior para telas menores */
        left: 50%; /* Centraliza o relógio horizontalmente em telas menores */
        transform: translate(-50%, -50%); /* Mantém o relógio centralizado */
     }
    }
-   
