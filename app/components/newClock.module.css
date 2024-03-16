@@ -11,14 +11,20 @@
     align-items: center; /* Centraliza verticalmente */
     overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do contêiner */
     transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
 }
+
+.clockContainer:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
 
 /* Estilos para telas menores */
 @media (max-width: 768px) {
     .clockContainer {
        width: 200px; /* Reduz o tamanho do relógio para telas menores */
        height: 300px; /* Reduz o tamanho do relógio para telas menores */
-       top: 20%; /* Ajusta a posição superior para telas menores */
+       top: 28%; /* Ajusta a posição superior para telas menores */
        left: 50%; /* Centraliza o relógio horizontalmente em telas menores */
        transform: translate(-50%, -50%); /* Mantém o relógio centralizado */
     }

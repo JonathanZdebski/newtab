@@ -158,16 +158,19 @@
 /* page.module.css */
 
 .roundedInput {
-  
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
- }
+    background-color: #5cabff21;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra escura ao texto */
+   }
+   
  
  .roundedInput:focus {
   border-color: #007bff; /* Muda a cor da borda para azul quando o input está focado */
-  transition: 0.3s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
+  transition: 0.6s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
  }
  
  /* Estilos para telas menores */
