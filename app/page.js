@@ -115,9 +115,18 @@ const Home = () => {
             className={styles.searchInput}
           />
         </div>
-        <button type="submit" className={styles.searchButton}>
-          Search
-        </button>
+        <div className="buttonContainer">
+          <button type="submit" className={styles.searchButton}>
+            Search
+          </button>
+          <button
+            type="button"
+            className={styles.searchButton}
+            onClick={() => window.open("https://chat.openai.com/", "_blank")}
+          >
+            ChatGPT
+          </button>
+        </div>
       </form>
       <div className={styles.iconContainer}>
         {[

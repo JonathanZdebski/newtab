@@ -36,9 +36,17 @@
   outline: none; /* Remove o contorno padrão do navegador */
  }
  
+ .buttonContainer {
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* Espaçamento entre os botões */
+  align-items: center; /* Alinhamento vertical dos botões */
+ }
+ 
+
  .searchButton {
   margin-top: 10px;
-  
+  margin-right: -5px;
+  margin-left: 25px;
   padding: 10px 20px;
   font-size: 18px;
   border-radius: 25px;
@@ -49,6 +57,8 @@
   transition: background-color 0.3s ease;
   box-shadow: 0 0 5px rgba(128, 128, 128, 0.5); /* Adiciona um efeito de sombra cinza suave */
  }
+ 
+ 
  
  
  .searchButton:hover {
