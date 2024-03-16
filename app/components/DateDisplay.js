@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./Clock.module.css"; // Importando o arquivo CSS como um módulo
 
 const DateDisplay = () => {
   const [date, setDate] = useState(new Date());
@@ -33,18 +34,13 @@ const DateDisplay = () => {
   const { date: formattedDate, dayOfWeek } = formatDate(date);
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "110px",
-        right: "35px",
-        zIndex: 1000,
-        fontSize: "2em",
-        fontFamily: "MyFont, sans-serif",
-      }}
-    >
+    <div className={styles.dateDisplayContainer}>
+      {" "}
+      {/* Aplicando a classe CSS */}
       <div>{formattedDate}</div>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div className={styles.dayOfWeek}>
+        {" "}
+        {/* Aplicando a classe CSS */}
         {dayOfWeek === "Friday" ? <span>{dayOfWeek}</span> : dayOfWeek}
       </div>
     </div>

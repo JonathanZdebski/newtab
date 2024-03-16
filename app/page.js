@@ -11,6 +11,7 @@ import Icon4 from "../app/icons/icon4.svg";
 import Icon5 from "../app/icons/icon5.svg";
 import Icon6 from "../app/icons/icon6.svg";
 import EditIcon from "../app/icons/EditIcon.svg"; // Importa o ícone SVG de edição
+import MeteoblueWidget from "./components/MeteoblueWidget";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -207,6 +208,7 @@ const Home = () => {
       </div>
       <Clock />
       <DateDisplay />
+      <MeteoblueWidget />
     </div>
   );
 };
