@@ -17,8 +17,8 @@
 
 @media (max-width: 768px) {
     .embedContainer {
-        top: auto;
-        left: 1.8rem; /* Alinha o contêiner à esquerda da tela */
+        top: 40rem;
+        left: 1.3rem; /* Alinha o contêiner à esquerda da tela */
         right: auto; /* Alinha o contêiner à direita da tela */
         width: 60%; /* Ocupa toda a largura da tela */
         height: auto; /* Ajusta a altura automaticamente para se adequar ao conteúdo */
@@ -29,7 +29,7 @@
     }
 
     .embedIframe {
-        width: 100%; /* Ocupa toda a largura do contêiner */
+        width: 130%; /* Ocupa toda a largura do contêiner */
         height: auto; /* Ajusta a altura automaticamente para se adequar ao conteúdo */
         border: 0; /* Remove a borda */
     }

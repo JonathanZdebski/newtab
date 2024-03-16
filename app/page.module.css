@@ -174,7 +174,7 @@
  @media (max-width: 768px) {
    .container {
        padding: 20px; /* Adiciona um pouco de padding para melhorar a legibilidade em telas menores */
-       display: flex; /* Usa flexbox para centralizar o conteúdo */
+       display: fixed; /* Usa flexbox para centralizar o conteúdo */
        flex-direction: column; /* Define a direção do flex para coluna */
        justify-content: center; /* Centraliza verticalmente */
        align-items: center; /* Centraliza horizontalmente */
@@ -186,8 +186,8 @@
    }
    
    .searchBar {
-    max-width: 85%; /* Ajusta a largura máxima para 100% para melhorar a responsividade */
-    margin-left: -40px; /* Move o elemento 10px para a esquerda */
+    max-width: 90%; /* Ajusta a largura máxima para 100% para melhorar a responsividade */
+    margin-left: -29px; /* Move o elemento 10px para a esquerda */
 }
 
    
@@ -200,11 +200,13 @@
        margin-top: 20px; /* Aumenta o espaçamento entre os botões */
        padding: 10px 15px; /* Reduz o padding dos botões */
        font-size: 16px; /* Reduz o tamanho da fonte dos botões */
+       margin-left: 1rem;
    }
    
    .iconContainer {
        gap: 20px; /* Reduz o espaçamento entre os ícones */
        padding: 40px 0; /* Ajusta o padding para melhorar a responsividade */
+       display: none;
    }
    
    .icon {
