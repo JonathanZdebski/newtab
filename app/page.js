@@ -13,6 +13,7 @@ import Icon6 from "../app/icons/icon6.svg";
 import EditIcon from "../app/icons/EditIcon.svg"; // Importa o ícone SVG de edição
 import MeteoblueWidget from "./components/MeteoblueWidget";
 import SpotifyEmbed from "./components/SpotifyEmbed";
+import BackgroundManager from "./components/BackgroundManager";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -220,6 +221,7 @@ const Home = () => {
       <DateDisplay />
       <MeteoblueWidget />
       <SpotifyEmbed />
+      <BackgroundManager />
     </div>
   );
 };

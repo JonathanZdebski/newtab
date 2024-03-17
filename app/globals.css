@@ -10,6 +10,8 @@ html, body {
  overflow: hidden;
  overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
  overflow-y: hidden; /* Esconde a barra de rolagem vertical */
+ transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
 }
 
 /* page.module.css ou arquivo CSS global */
@@ -29,9 +31,6 @@ html, body {
     font-size: 14px; /* Reduz o tamanho da fonte para telas menores */
  }
 
- .clock-container {
-    /* Ajustes específicos para telas menores, se necessário */
- }
  /* Estilos para telas menores */
 @media (max-width: 768px) {
    .footer {
