@@ -207,24 +207,22 @@
        margin-left: 0.8rem;
    }
    
-   .iconContainer {
-       gap: 20px; /* Reduz o espaçamento entre os ícones */
-       padding: 40px 0; /* Ajusta o padding para melhorar a responsividade */
-        
-       
-   }
-   
-   .icon {
-       width: 30px; /* Reduz o tamanho dos ícones */
-       height: 30px; /* Reduz o tamanho dos ícones */
-   
-   }
-   
-   .editIcon {
-       width: 20px; /* Reduz o tamanho dos ícones */
-       height: 20px; /* Reduz o tamanho dos ícones */
-       margin-right: 5px; /* Reduz o espaçamento à direita dos ícones */
-   }
+ .iconContainer {
+    gap: 10px; /* Reduz o espaçamento entre os ícones */
+    padding: 20px 0; /* Ajusta o padding para melhorar a responsividade */
+    width: 0.75rem; /* Reduz o tamanho do contêiner dos ícones */
+}
+
+.icon {
+    width: 20px; /* Reduz o tamanho dos ícones */
+    height: 20px; /* Reduz o tamanho dos ícones */
+}
+
+.editIcon {
+    width: 15px; /* Reduz o tamanho dos ícones */
+    height: 15px; /* Reduz o tamanho dos ícones */
+    margin-right: 3px; /* Reduz o espaçamento à direita dos ícones */
+}
    .icon6 {
       display: none; /* Remove o ícone da tela em telas menores */
   }

@@ -31,42 +31,53 @@
 /* Estilos para telas ainda menores, como tablets */
 @media (max-width: 768px) {
     .clockContainer {
-       width: 200px;
-       height: 300px;
-       top: 10%;
-       left: 50%;
-       transform: translate(-50%, -50%);
+        width: 200px; /* Reduz o tamanho do relógio para telas menores */
+        height: 300px; /* Reduz o tamanho do relógio para telas menores */
+        top: 15%; /* Ajusta a posição superior para telas menores */
+        left: 50%; /* Centraliza o relógio horizontalmente em telas menores */
+        transform: translate(-50%, -50%); /* Mantém o relógio centralizado */
     }
 }
 
 /* Estilos para telas pequenas, como smartphones */
 @media (max-width: 480px) {
     .clockContainer {
-       width: 120px; /* Diminui o tamanho do relógio */
-       height: 180px; /* Diminui o tamanho do relógio */
+       width: 120px;
+       height: 180px;
        top: 15%;
        left: 50%;
        transform: translate(-50%, -50%);
     }
 }
 
-/* Ajuste para notebooks de 1440p */
-@media (min-width: 2560px) and (max-width: 2560px) and (min-height: 1440px) and (max-height: 1440px) {
+/* Ajuste para resolução específica de 1200px */
+@media (max-width: 1200px) {
     .clockContainer {
-        width: 350px;
-        height: 450px;
-        top: 10%;
+        width: 220px; /* Reduz o tamanho do relógio */
+        height: 330px; /* Reduz o tamanho do relógio */
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 }
 
-/* Ajuste para notebooks de 1600p */
-@media (min-width: 3840px) and (max-width: 3840px) and (min-height: 2160px) and (max-height: 2160px) {
+/* Ajuste para resolução específica de 1600px */
+@media (max-width: 1600px) {
     .clockContainer {
-        width: 400px;
-        height: 500px;
-        top: 5%;
+        width: 240px; /* Reduz o tamanho do relógio */
+        height: 360px; /* Reduz o tamanho do relógio */
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Ajuste para resolução específica de 900px */
+@media (max-width: 900px) {
+    .clockContainer {
+        width: 200px; /* Reduz o tamanho do relógio */
+        height: 300px; /* Reduz o tamanho do relógio */
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
