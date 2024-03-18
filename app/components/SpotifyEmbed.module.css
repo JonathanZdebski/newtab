@@ -26,6 +26,7 @@
         justify-content: center; /* Centraliza horizontalmente */
         align-items: center; /* Centraliza verticalmente */
         padding: 10px 0; /* Adiciona um pouco de padding para melhorar a aparência */
+        display: none;
     }
 
     .embedIframe {

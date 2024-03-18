@@ -13,8 +13,9 @@
 }
 
 .widgetContainer iframe {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Ajusta-se ao tamanho do container */
+    height: 100%; /* Ajusta-se ao tamanho do container */
+    object-fit: contain; /* Mantém a proporção do conteúdo */
 }
 
 /* Estilos para telas menores */
@@ -25,6 +26,7 @@
        width: 95%; /* Reduz o tamanho do contêiner para 90% da largura da tela */
        height: 10rem; /* Ajusta a altura automaticamente para se adequar ao conteúdo */
        border-radius: 10px; /* Reduz o arredondamento das bordas para telas menores */
+       display: none;
     }
    
     .widgetContainer iframe {

@@ -55,8 +55,7 @@
   
  }
  
- 
- 
+
  
  .searchButton:hover {
   background-color: #ffffff4d;
@@ -182,7 +181,7 @@
        justify-content: center; /* Centraliza verticalmente */
        align-items: center; /* Centraliza horizontalmente */
        height: 100vh; /* Define a altura do contêiner para 100% da altura da viewport */
-
+       
    }
    
    .searchForm {
@@ -193,7 +192,6 @@
     max-width: 90%; /* Ajusta a largura máxima para 100% para melhorar a responsividade */
     margin-left: -29px; /* Move o elemento 10px para a esquerda */
 }
-
    
    .buttonContainer {
        flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
@@ -212,12 +210,14 @@
    .iconContainer {
        gap: 20px; /* Reduz o espaçamento entre os ícones */
        padding: 40px 0; /* Ajusta o padding para melhorar a responsividade */
-       display: none;
+        
+       
    }
    
    .icon {
        width: 30px; /* Reduz o tamanho dos ícones */
        height: 30px; /* Reduz o tamanho dos ícones */
+   
    }
    
    .editIcon {
@@ -232,4 +232,34 @@
    display: none; /* Remove o ícone da tela em telas menores */
 }
   }
-  
+
+  /* Estilos para telas menores que 1600px */
+@media (max-width: 1600px) {
+    .iconContainer {
+        gap: 8px; /* Reduz o espaçamento entre os ícones */
+        padding: 15px 0; /* Ajusta o padding */
+        display: flex; /* Mantém os ícones visíveis */
+        flex-wrap: wrap; /* Permite que os itens sejam dispostos em várias linhas */
+        margin-bottom: 4rem;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .iconContainer {
+        gap: 10px; /* Reduz ainda mais o espaçamento entre os ícones */
+        padding: 20px 0; /* Ajusta o padding */
+        display: flex; /* Mantém os ícones visíveis */
+        flex-wrap: wrap; /* Permite que os itens sejam dispostos em várias linhas */
+    }
+}
+
+/* Estilos para telas menores que 1280px */
+@media (max-width: 1280px) {
+    .iconContainer {
+        gap: 5px; /* Reduz o espaçamento entre os ícones */
+        padding: 10px 0; /* Ajusta o padding */
+        display: flex; /* Mantém os ícones visíveis */
+        flex-wrap: wrap; /* Permite que os itens sejam dispostos em várias linhas */
+    }
+}

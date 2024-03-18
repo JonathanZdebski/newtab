@@ -1,31 +1,63 @@
 .clockContainer {
-    position: fixed; /* Mantém o relógio fixo na tela, mesmo ao rolar */
-    top: 25%; /* Posiciona o topo do relógio no meio da altura da janela */
-    left: 51%; /* Posiciona a esquerda do relógio no meio da largura da janela */
-    transform: translate(-50%, -50%); /* Ajusta a posição para garantir que o centro do relógio esteja no centro da tela */
-    width: 300px; /* Ajuste o valor conforme necessário */
-    height: 400px; /* Ajuste o valor conforme necessário */
-    z-index: 1000; /* Garante que o relógio esteja acima de outros elementos */
-    display: flex; /* Usa flexbox para centralizar o conteúdo */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do contêiner */
-    transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
-    transition: transform 0.3s ease-in-out; /* Suaviza a transição do zoom */
+    position: fixed;
+    top: 25%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 .clockContainer:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-
 /* Estilos para telas menores */
 @media (max-width: 768px) {
     .clockContainer {
-       width: 200px; /* Reduz o tamanho do relógio para telas menores */
-       height: 300px; /* Reduz o tamanho do relógio para telas menores */
-       top: 15%; /* Ajusta a posição superior para telas menores */
-       left: 50%; /* Centraliza o relógio horizontalmente em telas menores */
+       width: 200px;
+       height: 300px;
+       top: 15%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+    }
+}
+
+/* Estilos para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+    .clockContainer {
+       width: 200px; /* Aumenta o tamanho do relógio para smartphones */
+       height: 300px; /* Aumenta o tamanho do relógio para smartphones */
+       top: 20%; /* Ajusta a posição superior para smartphones */
+       left: 50%; /* Centraliza o relógio horizontalmente em smartphones */
        transform: translate(-50%, -50%); /* Mantém o relógio centralizado */
     }
-   }
+}
+
+/* Ajuste para considerar a escala de zoom do usuário */
+@media (max-width: 768px) {
+    .clockContainer {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .clockContainer {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1280px) and (min-height: 720px) and (max-height: 720px) {
+    .clockContainer {
+        width: 250px;
+        height: 350px;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
