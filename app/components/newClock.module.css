@@ -17,41 +17,81 @@
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Estilos para telas menores */
-@media (max-width: 768px) {
+/* Estilos para telas menores, como notebooks menores */
+@media (max-width: 1024px) {
     .clockContainer {
-       width: 200px;
-       height: 300px;
-       top: 15%;
+       width: 250px;
+       height: 350px;
+       top: 15%; /* Ajuste para mover o relógio um pouco para cima */
        left: 50%;
        transform: translate(-50%, -50%);
     }
 }
 
-/* Estilos para telas ainda menores, como smartphones */
+/* Estilos para telas ainda menores, como tablets */
+@media (max-width: 768px) {
+    .clockContainer {
+       width: 200px;
+       height: 300px;
+       top: 10%; /* Ajuste para mover o relógio um pouco para cima */
+       left: 50%;
+       transform: translate(-50%, -50%);
+    }
+}
+
+/* Estilos para telas pequenas, como smartphones */
 @media (max-width: 480px) {
     .clockContainer {
-       width: 200px; /* Aumenta o tamanho do relógio para smartphones */
-       height: 300px; /* Aumenta o tamanho do relógio para smartphones */
-       top: 20%; /* Ajusta a posição superior para smartphones */
-       left: 50%; /* Centraliza o relógio horizontalmente em smartphones */
-       transform: translate(-50%, -50%); /* Mantém o relógio centralizado */
+       width: 150px;
+       height: 225px;
+       top: 15%; /* Ajuste para mover o relógio um pouco para cima */
+       left: 50%;
+       transform: translate(-50%, -50%);
+    }
+}
+
+/* Ajuste para notebooks de 1440p */
+@media (min-width: 2560px) and (max-width: 2560px) and (min-height: 1440px) and (max-height: 1440px) {
+    .clockContainer {
+        width: 350px;
+        height: 450px;
+        top: 10%; /* Ajuste para mover o relógio um pouco para cima */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Ajuste para notebooks de 1600p */
+@media (min-width: 3840px) and (max-width: 3840px) and (min-height: 2160px) and (max-height: 2160px) {
+    .clockContainer {
+        width: 400px;
+        height: 500px;
+        top: 5%; /* Ajuste para mover o relógio um pouco para cima */
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
 /* Ajuste para considerar a escala de zoom do usuário */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .clockContainer {
         transform: translate(-50%, -50%) scale(0.9);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .clockContainer {
         transform: translate(-50%, -50%) scale(0.8);
     }
 }
 
+@media (max-width: 480px) {
+    .clockContainer {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+/* Ajuste específico para uma resolução específica, se necessário */
 @media (min-width: 1280px) and (max-width: 1280px) and (min-height: 720px) and (max-height: 720px) {
     .clockContainer {
         width: 250px;
