@@ -22,7 +22,7 @@
     .clockContainer {
        width: 250px;
        height: 350px;
-       top: 15%; /* Ajuste para mover o relógio um pouco para cima */
+       top: 15%;
        left: 50%;
        transform: translate(-50%, -50%);
     }
@@ -33,7 +33,7 @@
     .clockContainer {
        width: 200px;
        height: 300px;
-       top: 10%; /* Ajuste para mover o relógio um pouco para cima */
+       top: 10%;
        left: 50%;
        transform: translate(-50%, -50%);
     }
@@ -42,9 +42,9 @@
 /* Estilos para telas pequenas, como smartphones */
 @media (max-width: 480px) {
     .clockContainer {
-       width: 150px;
-       height: 225px;
-       top: 15%; /* Ajuste para mover o relógio um pouco para cima */
+       width: 120px; /* Diminui o tamanho do relógio */
+       height: 180px; /* Diminui o tamanho do relógio */
+       top: 15%;
        left: 50%;
        transform: translate(-50%, -50%);
     }
@@ -55,7 +55,7 @@
     .clockContainer {
         width: 350px;
         height: 450px;
-        top: 10%; /* Ajuste para mover o relógio um pouco para cima */
+        top: 10%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -66,7 +66,7 @@
     .clockContainer {
         width: 400px;
         height: 500px;
-        top: 5%; /* Ajuste para mover o relógio um pouco para cima */
+        top: 5%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
