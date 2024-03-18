@@ -14,6 +14,7 @@ import EditIcon from "../app/icons/EditIcon.svg"; // Importa o ícone SVG de edi
 import MeteoblueWidget from "./components/MeteoblueWidget";
 import SpotifyEmbed from "./components/SpotifyEmbed";
 import BackgroundManager from "./components/BackgroundManager";
+import EnterIcon from "../app/icons/EnterIcon.svg";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -172,14 +173,6 @@ const Home = () => {
             setShowInput: setShowIcon5Input,
             inputName: "showIcon5Input",
           },
-          {
-            icon: Icon6,
-            url: icon6Url,
-            setUrl: setIcon6Url,
-            showInput: showIcon6Input,
-            setShowInput: setShowIcon6Input,
-            inputName: "showIcon6Input",
-          },
         ].map((iconData, index) => (
           <div
             key={index}
@@ -189,23 +182,44 @@ const Home = () => {
               <iconData.icon className={styles.icon} />
             </a>
             {iconData.showInput && (
-              <input
-                type="text"
-                placeholder={`Enter new URL for Icon ${index + 1}`}
-                value={iconData.url}
-                onChange={(event) =>
-                  handleIconUrlChange(iconData.setUrl, event)
-                }
-                onKeyPress={(event) =>
-                  handleKeyPress(
-                    event,
-                    iconData.setShowInput,
-                    iconData.inputName
-                  )
-                }
-                className={`${styles.iconInput} ${styles.roundedInput}`}
-              />
+              <div className={styles.inputWithIcon}>
+                <input
+                  type="text"
+                  placeholder={`Enter new URL for Icon ${index + 1}`}
+                  value={iconData.url}
+                  onChange={(event) =>
+                    handleIconUrlChange(iconData.setUrl, event)
+                  }
+                  onKeyPress={(event) =>
+                    handleKeyPress(
+                      event,
+                      iconData.setShowInput,
+                      iconData.inputName
+                    )
+                  }
+                  className={`${styles.iconInput} ${styles.roundedInput}`}
+                />
+                <span
+                  onClick={() => {
+                    // Simula a pressão da tecla "Enter"
+                    const fakeEvent = {
+                      key: "Enter",
+                      preventDefault: () => {}, // Função vazia para evitar erros
+                    };
+                    handleKeyPress(
+                      fakeEvent,
+                      iconData.setShowInput,
+                      iconData.inputName
+                    );
+                  }}
+                  className={styles.enterIconWrapper} // Utiliza a classe existente para estilizar o wrapper
+                >
+                  <EnterIcon className={styles.enterIcon} />{" "}
+                  {/* Adicione o ícone "Enter" */}
+                </span>
+              </div>
             )}
+
             {!iconData.showInput && (
               <EditIcon
                 onClick={() =>

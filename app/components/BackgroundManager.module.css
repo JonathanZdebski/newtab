@@ -1,0 +1,12 @@
+/* module.css */
+.closeIcon {
+    cursor: pointer;
+    width: 34px;
+    height: 44px;
+    position: absolute;
+    top: -45px;
+    right: 10px;
+    transition: stroke 0.3s ease; /* Isso não funcionará diretamente com SVGs em img tags */
+    color: aliceblue;
+   }
+   

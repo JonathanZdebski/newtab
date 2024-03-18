@@ -3,13 +3,13 @@
     position: fixed;
     top: 20px; /* Ajuste conforme necessário */
     left: 20px; /* Ajuste conforme necessário */
-    width: 350px; /* Ajuste o tamanho do contêiner conforme necessário */
+    width: 210px; /* Ajuste o tamanho do contêiner conforme necessário */
     height: 450px; /* Ajuste o tamanho do contêiner conforme necessário */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     overflow: auto; /* Adiciona rolagem se o conteúdo exceder o tamanho do contêiner */
-    border-radius: 20px; /* Arredonda as bordas do contêiner */
+    border-radius: 15px; /* Arredonda as bordas do contêiner */
 }
 
 .widgetContainer iframe {

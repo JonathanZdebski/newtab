@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import styles from "./BackgroundManager.module.css";
 
 const BackgroundManager = () => {
   const [background, setBackground] = useState("");
   const [showImages, setShowImages] = useState(false);
 
   useEffect(() => {
-    // Verifica se o código está sendo executado no lado do cliente
     if (typeof window !== "undefined") {
       const storedBackground = localStorage.getItem("background") || "bg1.jpg";
       setBackground(storedBackground);
@@ -47,12 +47,14 @@ const BackgroundManager = () => {
     <div
       style={{ position: "fixed", bottom: "70px", right: "20px", zIndex: 1000 }}
     >
-      <img
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-edit-2'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z'/%3E%3C/svg%3E"
-        alt="Personalize"
-        style={{ cursor: "pointer", width: "34px", height: "54px" }}
-        onClick={() => setShowImages(!showImages)}
-      />
+      {!showImages && ( // Exibe o ícone de edição apenas quando showImages for false
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-edit-2'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z'/%3E%3C/svg%3E"
+          alt="Personalize"
+          style={{ cursor: "pointer", width: "34px", height: "54px" }}
+          onClick={() => setShowImages(true)}
+        />
+      )}
 
       {showImages && (
         <div
@@ -111,6 +113,12 @@ const BackgroundManager = () => {
               </li>
             ))}
           </ul>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E"
+            alt="Fechar"
+            className={styles.closeIcon} // Aplique a classe aqui
+            onClick={() => setShowImages(false)}
+          />
         </div>
       )}
     </div>
