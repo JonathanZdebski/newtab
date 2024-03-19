@@ -23,10 +23,14 @@ const MeteoblueWidget = () => {
         style={{
           width: isExpanded ? "30vw" : "100%",
           height: isExpanded ? "60vh" : "100%",
+          marginLeft: isExpanded ? "50px" : "0",
+          marginTop: isExpanded ? "50px" : "0",
           position: isExpanded ? "fixed" : "static",
           top: isExpanded ? "0" : "auto",
           left: isExpanded ? "0" : "auto",
           zIndex: isExpanded ? "1000" : "auto",
+          transform: isExpanded ? "scale(1.1)" : "scale(1)",
+          transition: "transform 0.3s ease",
         }}
       ></iframe>
 

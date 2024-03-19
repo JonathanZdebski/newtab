@@ -37,10 +37,13 @@ const BackgroundManager = () => {
 
   const backgrounds = [
     "Wallpaper Padrão",
-    "#FFDAB9",
-    "#F5F5DC",
-    "#E0FFFF",
     "#d3d3d3",
+    "#FFDAB9",
+    "#f0f0f0",
+    "#add8e6",
+    "#F5F5DC",
+    "#87CEEB",
+    "#3CB371",
   ];
 
   return (
@@ -51,7 +54,7 @@ const BackgroundManager = () => {
         <img
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-edit-2'%3E%3Cpath d='M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z'/%3E%3C/svg%3E"
           alt="Personalize"
-          style={{ cursor: "pointer", width: "34px", height: "54px" }}
+          className={styles.editIcon} // Aplique a classe aqui
           onClick={() => setShowImages(true)}
         />
       )}
@@ -62,6 +65,12 @@ const BackgroundManager = () => {
             backgroundColor: "rgba(0, 0, 0, 0.8)",
             padding: "5px",
             borderRadius: "20px",
+            opacity: showImages ? 1 : 0, // Altera a opacidade com base em showImages
+            transform: showImages ? "scale(1)" : "scale(0)", // Altera a escala com base em showImages
+            transition: "opacity 0.3s ease, transform 0.3s ease", // Adiciona uma transição suave para a opacidade e transform
+            opacity: showImages ? 1 : 0, // Altera a opacidade com base em showImages
+            transform: showImages ? "scale(1)" : "scale(0)", // Altera a escala com base em showImages
+            transition: "opacity 0.3s ease, transform 0.3s ease", // Adiciona uma transição suave para a opacidade e transform
           }}
         >
           <ul
@@ -114,7 +123,7 @@ const BackgroundManager = () => {
             ))}
           </ul>
           <img
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E"
             alt="Fechar"
             className={styles.closeIcon} // Aplique a classe aqui
             onClick={() => setShowImages(false)}

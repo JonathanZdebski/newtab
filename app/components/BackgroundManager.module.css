@@ -6,7 +6,31 @@
     position: absolute;
     top: -45px;
     right: 10px;
-    transition: stroke 0.3s ease; /* Isso não funcionará diretamente com SVGs em img tags */
+    transition: stroke 0.3s ease, transform 0.3s ease; /* Adicionado transform para suavizar o efeito de zoom */
     color: aliceblue;
-   }
-   
+    transform: scale(1); /* Estado inicial do ícone */
+    transition-duration: 0.2s;
+}
+
+.closeIcon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone em 20% ao passar o mouse */
+}
+
+.editIcon {
+    cursor: pointer;
+    width: 34px;
+    height: 54px;
+    transform: scale(1);
+    transition-duration: 0.2s;
+}
+
+.editIcon:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone em 20% ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+    .editIcon {
+       margin-bottom: -3rem;
+       
+    }
+ }

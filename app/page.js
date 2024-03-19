@@ -16,6 +16,23 @@ import SpotifyEmbed from "./components/SpotifyEmbed";
 import BackgroundManager from "./components/BackgroundManager";
 import EnterIcon from "../app/icons/EnterIcon.svg";
 
+function getDomainName(url) {
+  try {
+    const urlObj = new URL(url);
+    let domain = urlObj.hostname;
+    // Remover 'www.' do início do domínio, se presente
+    domain = domain.replace(/^www\./, "");
+    // Remover a extensão de domínio (como .com, .org, etc.)
+    domain = domain.split(".").slice(0, -1).join(".");
+    // Deixar a primeira letra maiúscula
+    domain = domain.charAt(0).toUpperCase() + domain.slice(1);
+    return domain;
+  } catch (e) {
+    console.error(e);
+    return "Change URL";
+  }
+}
+
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [icon1Url, setIcon1Url] = useState("https://www.example1.com");
@@ -30,6 +47,22 @@ const Home = () => {
   const [showIcon4Input, setShowIcon4Input] = useState(true);
   const [showIcon5Input, setShowIcon5Input] = useState(true);
   const [showIcon6Input, setShowIcon6Input] = useState(true);
+  const domainName = getDomainName(icon1Url);
+  const [iconTitle, setIconTitle] = useState("");
+
+  useEffect(() => {
+    // Recuperação dos URLs dos ícones existente
+    const storedIcon1Url = localStorage.getItem("icon1Url");
+    // Recuperação dos URLs dos outros ícones omitida para brevidade
+
+    // Recuperação do título do localStorage
+    const storedIconTitle = localStorage.getItem("iconTitle");
+    if (storedIconTitle) setIconTitle(storedIconTitle);
+
+    // Atualização dos URLs dos ícones existente
+    if (storedIcon1Url) setIcon1Url(storedIcon1Url);
+    // Atualização dos URLs dos outros ícones omitida para brevidade
+  }, []);
 
   // Carregar os links e o estado de visibilidade do localStorage quando a página é carregada
   useEffect(() => {
@@ -173,63 +206,73 @@ const Home = () => {
             setShowInput: setShowIcon5Input,
             inputName: "showIcon5Input",
           },
-        ].map((iconData, index) => (
-          <div
-            key={index}
-            style={{ display: "flex", justifyContent: "center", gap: "10px" }}
-          >
-            <a href={iconData.url} target="_blank" rel="noopener noreferrer">
-              <iconData.icon className={styles.icon} />
-            </a>
-            {iconData.showInput && (
-              <div className={styles.inputWithIcon}>
-                <input
-                  type="text"
-                  placeholder={`Enter new URL for Icon ${index + 1}`}
-                  value={iconData.url}
-                  onChange={(event) =>
-                    handleIconUrlChange(iconData.setUrl, event)
-                  }
-                  onKeyPress={(event) =>
-                    handleKeyPress(
-                      event,
-                      iconData.setShowInput,
-                      iconData.inputName
-                    )
-                  }
-                  className={`${styles.iconInput} ${styles.roundedInput}`}
-                />
-                <span
-                  onClick={() => {
-                    // Simula a pressão da tecla "Enter"
-                    const fakeEvent = {
-                      key: "Enter",
-                      preventDefault: () => {}, // Função vazia para evitar erros
-                    };
-                    handleKeyPress(
-                      fakeEvent,
-                      iconData.setShowInput,
-                      iconData.inputName
-                    );
-                  }}
-                  className={styles.enterIconWrapper} // Utiliza a classe existente para estilizar o wrapper
-                >
-                  <EnterIcon className={styles.enterIcon} />{" "}
-                  {/* Adicione o ícone "Enter" */}
-                </span>
-              </div>
-            )}
+        ].map((iconData, index) => {
+          // Use a função getDomainName para obter o nome do domínio do URL específico do ícone
+          const domainName = getDomainName(iconData.url);
 
-            {!iconData.showInput && (
-              <EditIcon
-                onClick={() =>
-                  reopenInput(iconData.setShowInput, iconData.inputName)
-                }
-                className={styles.editIcon}
-              />
-            )}
-          </div>
-        ))}
+          return (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "10px",
+              }}
+            >
+              <h3 className={styles.domainName}>{domainName}</h3>
+
+              <a href={iconData.url} target="_blank" rel="noopener noreferrer">
+                <iconData.icon className={styles.icon} />
+              </a>
+
+              {iconData.showInput && (
+                <div className={styles.inputWithIcon}>
+                  <input
+                    type="text"
+                    placeholder={`Enter new URL for Icon ${index + 1}`}
+                    value={iconData.url}
+                    onChange={(event) =>
+                      handleIconUrlChange(iconData.setUrl, event)
+                    }
+                    onKeyPress={(event) =>
+                      handleKeyPress(
+                        event,
+                        iconData.setShowInput,
+                        iconData.inputName
+                      )
+                    }
+                    className={`${styles.iconInput} ${styles.roundedInput}`}
+                  />
+                  <span
+                    onClick={() => {
+                      const fakeEvent = {
+                        key: "Enter",
+                        preventDefault: () => {},
+                      };
+                      handleKeyPress(
+                        fakeEvent,
+                        iconData.setShowInput,
+                        iconData.inputName
+                      );
+                    }}
+                    className={styles.enterIconWrapper}
+                  >
+                    <EnterIcon className={styles.enterIcon} />
+                  </span>
+                </div>
+              )}
+              {!iconData.showInput && (
+                <EditIcon
+                  onClick={() =>
+                    reopenInput(iconData.setShowInput, iconData.inputName)
+                  }
+                  className={styles.editIcon}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
       <Clock />
       <DateDisplay />

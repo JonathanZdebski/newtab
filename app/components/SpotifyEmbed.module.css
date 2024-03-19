@@ -4,12 +4,14 @@
     top: 0; /* Alinha o contêiner ao topo da janela do navegador */
     width: 20%;
     height: 352px; /* Altura padrão para telas maiores */
+    left: auto;
+    margin-right: -2rem;
 }
 
 .embedIframe {
     position: absolute;
     top: 130px;
-    left: 2.3em;
+    left: auto;
     width: 85%;
     height: 100%;
     border: 0;

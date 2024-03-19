@@ -136,7 +136,6 @@
  }
  
  .editIcon {
-  
   width: 30px; /* Define a largura do ícone */
   height: 30px; /* Define a altura do ícone */
   cursor: pointer; /* Muda o cursor para um ponteiro quando o mouse passa sobre o ícone */
@@ -147,6 +146,7 @@
   padding: 5px; /* Adiciona um pouco de espaço ao redor do ícone para garantir que o arredondamento seja visível */
   display: inline-block; /* Garante que o padding seja aplicado corretamente */
   margin-right: 10px; /* Adiciona um espaço à direita do ícone */
+  margin-left: 1rem;
  }
  
  .editIcon:hover {
@@ -199,6 +199,17 @@
   border-color: #007bff; /* Muda a cor da borda para azul quando o input está focado */
   transition: 0.6s ease-in-out; /* Adiciona uma transição suave para a cor da borda */
  }
+
+ /* styles.module.css */
+
+ .domainName {
+    font-size: 1em;
+    color: #ffffff;
+    margin-bottom: 2px;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0); /* Adiciona uma sombra ao texto */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+   }
  
  /* Estilos para telas menores */
  @media (max-width: 768px) {
@@ -209,9 +220,11 @@
        justify-content: center; /* Centraliza verticalmente */
        align-items: center; /* Centraliza horizontalmente */
        height: 100vh; /* Define a altura do contêiner para 100% da altura da viewport */
-       
    }
-   
+   .domainName {
+    display: none;
+   }
+
    .searchForm {
        width: 100%; /* Garante que o formulário de pesquisa ocupe toda a largura disponível */
    }
@@ -223,9 +236,8 @@
    
    .buttonContainer {
        flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
-       gap: 10px; /* Reduz o espaçamento entre os botões */
+       gap: 5px; /* Reduz o espaçamento entre os botões */
        margin-left: 10px;
-       
    }
    
    .searchButton {
@@ -239,7 +251,6 @@
    .iconContainer {
        gap: 20px; /* Reduz o espaçamento entre os ícones */
        padding: 40px 0; /* Ajusta o padding para melhorar a responsividade */
-       
    }
    
    .icon {
@@ -251,7 +262,7 @@
    .editIcon {
        width: 20px; /* Reduz o tamanho dos ícones */
        height: 20px; /* Reduz o tamanho dos ícones */
-       margin-right: 5px; /* Reduz o espaçamento à direita dos ícones */
+    
    }
    .icon6 {
       display: none; /* Remove o ícone da tela em telas menores */
