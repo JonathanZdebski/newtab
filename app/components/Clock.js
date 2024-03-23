@@ -11,8 +11,9 @@ const Clock = () => {
         navigator.geolocation.getCurrentPosition((position) => {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
-          const timezone = moment.tz.zone(moment.tz.guess(lat, lon));
-          setTimezone(timezone.name);
+          const timezoneObject = moment.tz.zone(moment.tz.guess(lat, lon));
+          // Extrai o nome do timezone do objeto e define o estado
+          setTimezone(timezoneObject.name);
         });
       } else {
         console.log("Geolocation is not supported by this browser.");
