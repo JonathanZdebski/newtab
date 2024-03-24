@@ -15,6 +15,7 @@ import MeteoblueWidget from "./components/MeteoblueWidget";
 import SpotifyEmbed from "./components/SpotifyEmbed";
 import BackgroundManager from "./components/BackgroundManager";
 import EnterIcon from "../app/icons/EnterIcon.svg";
+import NoteAndTodo from "./components/NoteAndTodo";
 
 function getDomainName(url) {
   try {
@@ -138,6 +139,8 @@ const Home = () => {
     // Atualizar o estado de visibilidade no localStorage
     localStorage.setItem(inputName, "true");
   };
+
+  const [visibleIcons, setVisibleIcons] = useState([0, 1, 2, 3, 4]);
 
   return (
     <div className={styles.container}>
@@ -273,6 +276,9 @@ const Home = () => {
             </div>
           );
         })}
+      </div>
+      <div>
+        <NoteAndTodo />
       </div>
       <Clock />
       <DateDisplay />

@@ -1,0 +1,194 @@
+/* NoteAndTodo.module.css */
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.849); /* Fundo um pouco transparente */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.containerHidden {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: transform 0.3s ease;
+}
+
+.button {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc; /* Borda para tornar o botão mais atraente */
+    cursor: pointer; /* Muda o cursor para indicar que é um botão */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.button:hover {
+    background-color: #e0e0e0; /* Muda a cor de fundo ao passar o mouse */
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #e0e0e0;
+}
+
+.addNoteButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #fff; /* Cor de fundo branca */
+    color: #000; /* Cor do texto preta */
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Adiciona transição para a cor do texto e da borda */
+}
+
+.addNoteButton:hover {
+    background-color: #000; /* Cor de fundo preta ao passar o mouse */
+    color: #fff; /* Cor do texto branca ao passar o mouse */
+    border-color: #fff; /* Borda branca ao passar o mouse */
+}
+
+.addTaskButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #fff; /* Cor de fundo branca */
+    color: #000; /* Cor do texto preta */
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Adiciona transição para a cor do texto e da borda */
+}
+
+.addTaskButton:hover {
+    background-color: #000; /* Cor de fundo preta ao passar o mouse */
+    color: #fff; /* Cor do texto branca ao passar o mouse */
+    border-color: #fff; /* Borda branca ao passar o mouse */
+}
+
+.removeButton {
+    margin-right: 2rem; /* Ajusta a margem para mover o botão um pouco para a esquerda */
+    padding: 5px 10px; /* Reduz o padding para tornar o botão menor */
+    background-color: #fff; /* Cor de fundo branca */
+    color: #000; /* Cor do texto preta */
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px;
+    font-size: 14px; /* Reduz o tamanho da fonte para tornar o botão menor */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo, texto e borda */
+}
+
+.removeButton:hover {
+    background-color: #000; /* Cor de fundo preta ao passar o mouse */
+    color: #fff; /* Cor do texto branca ao passar o mouse */
+    border-color: #fff; /* Borda branca ao passar o mouse */
+}
+
+.taskInput::after{
+    border-color: #008cff;
+}
+
+.taskInput {
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    margin-left: 7px;
+    margin-right: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.taskInput:hover {
+    border-color: #008cff;
+    transition: 0.3s ease-in-out;
+}
+
+.notepadTitle {
+    text-align: center;
+    color: #353535; /* Cor azul atraente */
+    font-size: 24px; /* Aumenta o tamanho da fonte */
+    margin-top: 20px; /* Adiciona espaço acima do título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave ao texto */
+}
+
+.button {
+    background-color: #ffc400; /* Cor de fundo preta */
+    color: #000000; /* Cor do texto branca */
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Arredonda os cantos do botão */
+    padding: 10px 20px; /* Aumenta o padding para melhorar a experiência do usuário */
+    font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    cursor: pointer; /* Muda o cursor para um ponteiro quando o mouse passa sobre o botão */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo */
+    margin: 10px 0; /* Adiciona margem acima e abaixo do botão para dar-lhe um toque de destaque */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra suave ao texto */
+}
+
+.button:hover {
+    background-color: #ffffff; /* Altera a cor de fundo para branco ao passar o mouse */
+    color: hsl(0, 0%, 0%) ;
+}
+
+.customcheckbox {
+    appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    border-radius: 50%; /* Ajuste para tornar o checkbox em formato de círculo */
+    display: inline-block;
+    position: relative;
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px; /* Ajuste o tamanho conforme necessário */
+   }
+   
+   .customcheckbox:checked:after {
+    content: '';
+    width: 12px; /* Ajuste o tamanho conforme necessário */
+    height: 12px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Ajuste para tornar o pseudo-elemento em formato de círculo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #ffbb00;
+    transform: translate(-50%, -50%);
+   }
+   
